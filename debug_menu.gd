@@ -3,9 +3,19 @@ extends Control
 const SAVE_PATH = "user://save_data.json"
 
 @onready var dataDisplay = $data_display
+@onready var anim: AnimatedSprite2D = $Node2D/CharacterBody2D/AnimatedSprite2D
+
 var levels_completed: int = 0
 var total_stars: int = 0
 var total_deaths: int = 0
+
+
+@export var speed: float = 300.0
+@export var acceleration: float = 2000.0
+@export var friction: float = 2500.0
+@export var jump_velocity: float = -450.0
+@export var velocity: Vector2 = Vector2.ZERO
+
 
 func save_game() -> void:
 	var data := {
@@ -76,3 +86,15 @@ func _on_give_star_pressed() -> void:
 func _on_readsave_pressed() -> void:
 	load_game()
 	dataDisplay.text = get_debug_text() + "\n\n" + get_saved_file_text()
+
+func _on_resetsave_pressed() -> void:
+	total_deaths = 0
+	total_stars = 0
+	levels_completed = 0
+	save_game()
+
+
+
+# Movement
+
+
