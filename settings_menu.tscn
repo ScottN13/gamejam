@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ddbt63jqy6vs5"]
+
+[ext_resource type="Script" uid="uid://dckknenxda8g7" path="res://settings_menu.gd" id="1_ufg0w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8vqkf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w81ou"]
+stacked_outline_count = 2
+stacked_outline_0/size = 2
+stacked_outline_0/color = Color(0.8235294, 0, 0, 1)
+stacked_outline_1/size = 5
+stacked_outline_1/color = Color(0.5254902, 0, 0, 1)
+
+[node name="Settings Menu" type="Control" unique_id=1522374021]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufg0w")
+
+[node name="Label" type="Label" parent="." unique_id=1050061336]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19900002
+anchor_bottom = 0.186
+offset_left = 455.0
+offset_top = 240.0
+offset_right = 395.75198
+offset_bottom = 278.472
+text = "No settings yet :("
+label_settings = SubResource("LabelSettings_8vqkf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="." unique_id=585749891]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 47.0
+offset_right = 276.0
+offset_bottom = 103.0
+
+[node name="Label" type="Label" parent="ReturnButton" unique_id=507358465]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 55.0
+text = "< Return to main menu"
+label_settings = SubResource("LabelSettings_w81ou")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
