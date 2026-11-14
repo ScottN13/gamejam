@@ -3,6 +3,7 @@ extends Control
 var GraphSetting = "Low"
 @onready var LowLabel = $GrphLowButton/Label
 @onready var HighLabel = $GrphHighButton/Label
+@onready var Title = $Title
 
 func _on_return_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://main_menu.tscn")
@@ -11,6 +12,11 @@ func _on_return_button_pressed() -> void:
 
 func _ready() -> void:
 	$VolValue.text = str(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
+
+	# title styling that can't be done with bbcode
+	Title.add_theme_constant_override("outline_size", 10)
+	Title.add_theme_color_override("font_outline_color", Color.BLACK)
+
 	pass
 
 func _on_volume_slider_value_changed(value: float) -> void:
