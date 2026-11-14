@@ -4,6 +4,8 @@ var GraphSetting = "Low"
 @onready var LowLabel = $GrphLowButton/Label
 @onready var HighLabel = $GrphHighButton/Label
 @onready var Title = $Title
+@onready var VolValue = $VolumeSlider/VolValue
+@onready var RtrnLabel = $ReturnButton/RtrnLabel
 
 func _on_return_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://main_menu.tscn")
@@ -11,7 +13,7 @@ func _on_return_button_pressed() -> void:
 
 
 func _ready() -> void:
-	$VolValue.text = str(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
+	$VolValue.text = str(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))) # displays the audio value
 
 	# title styling that can't be done with bbcode
 	Title.add_theme_constant_override("outline_size", 10)
@@ -26,6 +28,9 @@ func _on_volume_slider_value_changed(value: float) -> void:
 
 func _on_grph_low_button_pressed() -> void:
 	if GraphSetting != "Low":
+
+		# insert graphics function here
+
 		GraphSetting = "Low"
 		LowLabel.text = "Low ✓" # the actual text displayed
 		HighLabel.text = "High" # reset the other label
@@ -36,6 +41,9 @@ func _on_grph_low_button_pressed() -> void:
 
 
 func _on_grph_high_button_pressed() -> void:
+
+	# insert graphics function here
+
 	if GraphSetting != "High":
 		GraphSetting = "High"
 		HighLabel.text = "High ✓" # the actual text displayed
