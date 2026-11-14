@@ -14,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://c1bf5dmwfkxmj" path="res://spritesheets/emeral_hill_background6.png" id="6_kbo48"]
 [ext_resource type="Texture2D" uid="uid://w65b0btov7yy" path="res://spritesheets/emeral_hill_background7.png" id="7_4dyl1"]
 [ext_resource type="AudioStream" uid="uid://q4sx4bkomxms" path="res://sounds/02 - Emerald Hill Zone MP3.mp3" id="13_2meft"]
-[ext_resource type="PackedScene" uid="uid://dut7pxnf2rnwq" path="res://scenes/Prefabs/Characters/Tails.tscn" id="15_ipmer"]
+[ext_resource type="PackedScene" uid="uid://dut7pxnf2rnwq" path="res://scenes/Prefabs/Characters/old tails.tscn" id="15_ipmer"]
+[ext_resource type="PackedScene" uid="uid://dytqc5t7lpdx3" path="res://scenes/Prefabs/Characters/Tails.tscn" id="16_av1gt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipmer"]
 size = Vector2(29, 31.75)
@@ -954,11 +955,14 @@ limit_enabled = false
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("4_dw26h")
-character_path = NodePath("../Tails")
+character_path = NodePath("../TailsOld")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1641960431]
 stream = ExtResource("13_2meft")
 autoplay = true
 parameters/looping = false
 
-[node name="Tails" parent="." unique_id=1376012498 instance=ExtResource("15_ipmer")]
+[node name="TailsOld" parent="." unique_id=1376012498 instance=ExtResource("15_ipmer")]
+
+[node name="Tails" parent="." unique_id=1880803816 instance=ExtResource("16_av1gt")]
+position = Vector2(-46, -55)
