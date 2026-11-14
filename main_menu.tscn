@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://jgi5g84077f6"]
+
+[ext_resource type="Script" uid="uid://7dsbrfdsp6hw" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w81ou"]
+font_size = 20
+
+[node name="Main menu" type="Control" unique_id=668341805]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="StartButton" type="Button" parent="." unique_id=777264335]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 286.0
+offset_right = 623.0
+offset_bottom = 349.0
+text = "start"
+
+[node name="SettingsButton" type="Button" parent="." unique_id=991845080]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 391.0
+offset_right = 624.0
+offset_bottom = 454.0
+text = "settings
+"
+
+[node name="CloseButton" type="Button" parent="." unique_id=1314463899]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 481.0
+offset_right = 610.0
+offset_bottom = 536.0
+text = "exit game
+"
+
+[node name="Label" type="Label" parent="." unique_id=1329867355]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 159.0
+offset_right = 666.0
+offset_bottom = 223.0
+text = "gamejam gayme :DD
+title: rollback"
+label_settings = SubResource("LabelSettings_w81ou")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
