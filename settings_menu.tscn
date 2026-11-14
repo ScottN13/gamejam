@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dckknenxda8g7" path="res://settings_menu.gd" id="1_ufg0w"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_8vqkf"]
+[sub_resource type="LabelSettings" id="LabelSettings_ufg0w"]
+font_size = 28
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_w81ou"]
 stacked_outline_count = 2
@@ -11,26 +15,50 @@ stacked_outline_0/color = Color(0.8235294, 0, 0, 1)
 stacked_outline_1/size = 5
 stacked_outline_1/color = Color(0.5254902, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_mpdhx"]
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_jggmm"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_lek5h"]
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0.80784315, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cmel"]
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(1, 0, 0, 1)
+
 [node name="Settings Menu" type="Control" unique_id=1522374021]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ufg0w")
 
-[node name="Label" type="Label" parent="." unique_id=1050061336]
+[node name="Title" type="Label" parent="." unique_id=1050061336]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.19900002
-anchor_bottom = 0.186
-offset_left = 455.0
-offset_top = 240.0
-offset_right = 395.75198
-offset_bottom = 278.472
-text = "No settings yet :("
-label_settings = SubResource("LabelSettings_8vqkf")
+anchor_left = 0.42700002
+anchor_top = 0.034
+anchor_right = 0.42700002
+anchor_bottom = 0.034
+offset_left = 0.09597778
+offset_top = -13.0320015
+offset_right = 170.09598
+offset_bottom = 70.968
+text = "Settings"
+label_settings = SubResource("LabelSettings_ufg0w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -50,4 +78,85 @@ label_settings = SubResource("LabelSettings_w81ou")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="VolumeSlider" type="HSlider" parent="." unique_id=1309955926]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.028
+anchor_bottom = 0.028
+offset_left = 215.0
+offset_top = 143.856
+offset_right = 647.0
+offset_bottom = 176.856
+
+[node name="AudioLabel" type="Label" parent="." unique_id=1324997402]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 161.0
+offset_right = 203.0
+offset_bottom = 192.0
+text = "Audio"
+label_settings = SubResource("LabelSettings_mpdhx")
+horizontal_alignment = 1
+
+[node name="VolValue" type="Label" parent="." unique_id=616392742]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 157.0
+offset_right = 704.0
+offset_bottom = 196.0
+text = "0"
+label_settings = SubResource("LabelSettings_jggmm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GraphicsLabel" type="Label" parent="." unique_id=637637250]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 248.0
+offset_right = 208.0
+offset_bottom = 279.0
+text = "Graphics"
+label_settings = SubResource("LabelSettings_mpdhx")
+horizontal_alignment = 1
+
+[node name="GrphLowButton" type="Button" parent="." unique_id=1888469166]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 235.0
+offset_right = 376.0
+offset_bottom = 291.0
+toggle_mode = true
+
+[node name="Label" type="Label" parent="GrphLowButton" unique_id=71679238]
+layout_mode = 0
+offset_right = 143.0
+offset_bottom = 57.0
+text = "Low"
+label_settings = SubResource("LabelSettings_lek5h")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="GrphHighButton" type="Button" parent="." unique_id=246110318]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 236.0
+offset_right = 539.0
+offset_bottom = 292.0
+toggle_mode = true
+
+[node name="Label" type="Label" parent="GrphHighButton" unique_id=282475739]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 142.0
+offset_bottom = 58.0
+text = "High"
+label_settings = SubResource("LabelSettings_0cmel")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="value_changed" from="VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="GrphLowButton" to="." method="_on_grph_low_button_pressed"]
+[connection signal="pressed" from="GrphHighButton" to="." method="_on_grph_high_button_pressed"]
