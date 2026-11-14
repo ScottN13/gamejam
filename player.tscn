@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bedxnervixl45"]
+[gd_scene format=3 uid="uid://cm0odt318kmp4"]
 
 [ext_resource type="Texture2D" uid="uid://b0wwa15u7gp4k" path="res://sources/sprites/jump1.png" id="1_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://xfgkh5ybvjvk" path="res://sources/sprites/fall_01.png" id="1_nvl01"]
@@ -103,7 +103,7 @@ animations = [{
 "texture": ExtResource("15_fddr8")
 }],
 "loop": 1,
-"name": &"idle_sitting",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -227,8 +227,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=774158366]
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_iwvfo")
-animation = &"idle_sitting"
-frame_progress = 0.70857215
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1633809355]
 shape = SubResource("CapsuleShape2D_iwvfo")
