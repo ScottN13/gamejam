@@ -12,7 +12,7 @@ shader_parameter/bg_top = Color(0.08, 0.02, 0.25, 1)
 shader_parameter/bg_bottom = Color(0.078431375, 0.019607844, 0.2509804, 1)
 shader_parameter/blob_low = Color(0.15632036, 1.0588765e-06, 0.7438539, 1)
 shader_parameter/blob_high = Color(0, 0.28779, 0.44754392, 1)
-shader_parameter/speed = 1.0240000453801201
+shader_parameter/speed = 1.02400004538012
 shader_parameter/bounce = 0.322000015295
 shader_parameter/threshold = 1.0
 shader_parameter/softness = 0.06
@@ -103,6 +103,25 @@ mouse_filter = 2
 color = Color(5.655363e-07, 0, 0.34476054, 1)
 script = ExtResource("4_glbon")
 
+[node name="dbgbutton" type="Button" parent="." unique_id=116022407]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 311.0
+offset_right = 1036.0
+offset_bottom = 374.0
+
+[node name="dbglabel" type="RichTextLabel" parent="dbgbutton" unique_id=1895606318]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 15.0
+offset_right = 237.0
+offset_bottom = 64.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=20][wave amp=3.0 freq=2.0]debug[/wave]"
+scroll_active = false
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="dbgbutton" to="." method="_on_dbgbutton_pressed"]

@@ -4,6 +4,7 @@ extends Control
 @onready var SettingsLabel = $SettingsButton/SettingsLabel
 @onready var CloseLabel = $CloseButton/CloseLabel
 @onready var Title = $Title
+@onready var DbgLabel = $dbgbutton/dbglabel
 
 func _ready() -> void:
 	Title.add_theme_constant_override("outline_size", 10)
@@ -21,3 +22,8 @@ func _on_settings_button_pressed() -> void:
 
 func _on_close_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_dbgbutton_pressed() -> void:
+	get_tree().change_scene_to_file("res://debug_menu.tscn")
+	pass # Replace with function body.

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dfte55m4wgrkw"]
+
+[ext_resource type="Script" uid="uid://buk5jm1m136u3" path="res://debug_menu.gd" id="1_u3ugm"]
+
+[node name="Control" type="Control" unique_id=7356701]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3ugm")
+
+[node name="give_level_completed" type="Button" parent="." unique_id=920700449]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 213.0
+offset_right = 172.0
+offset_bottom = 247.0
+text = "+ complete"
+
+[node name="data_display" type="Label" parent="." unique_id=784489620]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 42.0
+offset_right = 768.0
+offset_bottom = 572.0
+
+[node name="give_death" type="Button" parent="." unique_id=54097857]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 123.0
+offset_right = 167.0
+offset_bottom = 157.0
+text = "+ death"
+
+[node name="give_star" type="Button" parent="." unique_id=1414819420]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 167.0
+offset_right = 168.0
+offset_bottom = 201.0
+text = "+ star"
+
+[node name="readsave" type="Button" parent="." unique_id=1480668169]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 75.0
+offset_right = 193.0
+offset_bottom = 111.0
+text = "read save
+"
+
+[connection signal="pressed" from="give_level_completed" to="." method="_on_give_level_completed_pressed"]
+[connection signal="pressed" from="give_death" to="." method="_on_give_death_pressed"]
+[connection signal="pressed" from="give_star" to="." method="_on_give_star_pressed"]
+[connection signal="pressed" from="readsave" to="." method="_on_readsave_pressed"]
