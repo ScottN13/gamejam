@@ -1,20 +1,22 @@
 [gd_scene format=3 uid="uid://c2u3cgtxps5sw"]
 
 [ext_resource type="PackedScene" uid="uid://cm0odt318kmp4" path="res://player.tscn" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://bf7it7ym7231a" path="res://scene1.gd" id="2_epypp"]
 
-[node name="Node2D" type="Node2D" unique_id=1894675430]
+[node name="Node2D" type="Node2D" unique_id=998570458]
 
 [node name="CharacterBody2D" parent="." unique_id=1342574770 instance=ExtResource("1_0e48y")]
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2001970966]
+[node name="Label" type="Label" parent="CharacterBody2D" unique_id=498577670]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1654052930]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=107316318]
+zoom = Vector2(4, 4)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1425993529]
-script = ExtResource("2_epypp")
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=708971737]
 
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D" unique_id=645976097]
-color = Color(0.07762883, 0.07762881, 0.07762881, 1)
-polygon = PackedVector2Array(-208.80002, 9.200012, 81.599945, 10.000008, -91.20001, 73.99999)
-uv = PackedVector2Array(-159.19998, -42.799995, 33.600006, -4.4000015, -91.20001, 73.99999)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=875389953]
+polygon = PackedVector2Array(-151, 17, 189, 16, 317, -22, 341, -76, 338, 90, -382, 88, -388, -113, -338, -48, -307, -22, -287, -10, -255, 6, -230, 14, -189, 22)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D" unique_id=1081029208]

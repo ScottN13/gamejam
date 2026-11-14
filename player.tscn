@@ -172,25 +172,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_epypp"]
-b = Vector2(0, -15)
-
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1342574770]
 script = ExtResource("1_lx7w8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=627091717]
+position = Vector2(0, -2.3841858e-07)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_iwvfo")
 animation = &"idle"
-
-[node name="Collision" type="CollisionShape2D" parent="." unique_id=756493464]
-shape = SubResource("SegmentShape2D_epypp")
-
-[node name="RayCast" type="RayCast2D" parent="Collision" unique_id=576469195]
-target_position = Vector2(0, 4)
-
-[node name="WallCast" type="RayCast2D" parent="Collision" unique_id=1772885774]
-position = Vector2(-9, 0)
-target_position = Vector2(5, 0)
+frame_progress = 0.2222707
 
 [node name="ControlLockTimer" type="Timer" parent="." unique_id=1680434313]
 wait_time = 0.5
