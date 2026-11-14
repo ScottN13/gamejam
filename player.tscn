@@ -15,14 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://cnxtdpsfiw8xr" path="res://sources/sprites/lose_02.png" id="9_634y6"]
 [ext_resource type="Texture2D" uid="uid://dugakynjas2t4" path="res://sources/sprites/lose_03.png" id="10_efrwb"]
 [ext_resource type="Texture2D" uid="uid://b5tq3rsop2205" path="res://sources/sprites/lose_04.png" id="11_hiqhm"]
-[ext_resource type="Texture2D" uid="uid://bmok38dn8rese" path="res://sources/sprites/walking_01.png" id="16_tkwlq"]
-[ext_resource type="Texture2D" uid="uid://bb282y81ypjcq" path="res://sources/sprites/walking_02.png" id="17_hl5qd"]
-[ext_resource type="Texture2D" uid="uid://dd08xpo1f1h5q" path="res://sources/sprites/walking_03.png" id="18_ek41f"]
-[ext_resource type="Texture2D" uid="uid://dbrykxdskcrx6" path="res://sources/sprites/walking_04.png" id="19_khis8"]
-[ext_resource type="Texture2D" uid="uid://b23gxadd1781" path="res://sources/sprites/walking_05.png" id="20_b88wv"]
-[ext_resource type="Texture2D" uid="uid://c8v2esxgdaxo5" path="res://sources/sprites/walking_08.png" id="21_pgbbb"]
-[ext_resource type="Texture2D" uid="uid://douh4rr0ddpqw" path="res://sources/sprites/walking_07.png" id="22_331ug"]
-[ext_resource type="Texture2D" uid="uid://dltlqj4blu03y" path="res://sources/sprites/walking_06.png" id="23_ny14h"]
+[ext_resource type="Texture2D" uid="uid://c37rkvtjbxyin" path="res://sources/sprites/walking_01.png" id="16_tkwlq"]
+[ext_resource type="Texture2D" uid="uid://c8uw1itujg63d" path="res://sources/sprites/walking_02.png" id="17_hl5qd"]
+[ext_resource type="Texture2D" uid="uid://bmkqlpkl55bo6" path="res://sources/sprites/walking_03.png" id="18_ek41f"]
+[ext_resource type="Texture2D" uid="uid://dud4u1sbfbvgu" path="res://sources/sprites/walking_04.png" id="19_khis8"]
+[ext_resource type="Texture2D" uid="uid://dw3qn4ah3efqh" path="res://sources/sprites/walking_05.png" id="20_b88wv"]
+[ext_resource type="Texture2D" uid="uid://blhmu4hmv83tu" path="res://sources/sprites/walking_08.png" id="21_pgbbb"]
+[ext_resource type="Texture2D" uid="uid://bccxrgjb2k6go" path="res://sources/sprites/walking_07.png" id="22_331ug"]
+[ext_resource type="Texture2D" uid="uid://bu7h38ym2ykjy" path="res://sources/sprites/walking_06.png" id="23_ny14h"]
 [ext_resource type="Texture2D" uid="uid://bwq8g16t8bcll" path="res://sources/sprites/win_01.png" id="24_ibah8"]
 [ext_resource type="Texture2D" uid="uid://blhu0nd2r1jo4" path="res://sources/sprites/win_02.png" id="25_3iwfv"]
 [ext_resource type="Texture2D" uid="uid://l770aribgn5p" path="res://sources/sprites/win_03.png" id="26_qwsg1"]
@@ -106,19 +106,19 @@ animations = [{
 "texture": ExtResource("18_ek41f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_khis8")
-}, {
-"duration": 1.0,
 "texture": ExtResource("20_b88wv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_pgbbb")
+"texture": ExtResource("19_khis8")
 }, {
 "duration": 1.0,
 "texture": ExtResource("22_331ug")
 }, {
 "duration": 1.0,
 "texture": ExtResource("23_ny14h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pgbbb")
 }],
 "loop": 1,
 "name": &"walk",
@@ -143,16 +143,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iwvfo"]
-radius = 47.0
-height = 136.0
+radius = 61.0
+height = 224.0
 
 [node name="Player" type="Area2D" unique_id=1285879948]
 position = Vector2(5, -1)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=774158366]
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_iwvfo")
-animation = &"damage"
+animation = &"winning"
+frame = 3
+frame_progress = 0.43737233
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1633809355]
 shape = SubResource("CapsuleShape2D_iwvfo")
