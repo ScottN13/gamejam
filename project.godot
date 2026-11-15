@@ -15,14 +15,11 @@ run/main_scene="uid://jgi5g84077f6"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.png"
 
-<<<<<<< Updated upstream
-=======
 [autoload]
 
 PlayerInput="*uid://cp2ismbm2y7w8"
 Global="*uid://c07di2fvj7re6"
 
->>>>>>> Stashed changes
 [display]
 
 window/size/viewport_height=720
