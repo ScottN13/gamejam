@@ -10,7 +10,7 @@ func _ready() -> void:
 	Title.add_theme_color_override("font_outline_color", Color.BLACK)
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://scenes/Level1.tscn")
 	print("game started!")
 
 
