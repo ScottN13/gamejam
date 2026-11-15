@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cdr05ftda4xu8"]
+
+[ext_resource type="Script" uid="uid://dg4llp2m8faji" path="res://scenes/Prefabs/coin.gd" id="1_kqhar"]
+[ext_resource type="Texture2D" uid="uid://cyflxx6rp7wf2" path="res://sources/sprites/coin/gold_spin/gold_spin_1.png" id="1_vbujj"]
+[ext_resource type="Texture2D" uid="uid://bh0sdrhog20q7" path="res://sources/sprites/coin/gold_spin/gold_spin_2.png" id="2_kqhar"]
+[ext_resource type="Texture2D" uid="uid://jx7v6d8eabww" path="res://sources/sprites/coin/gold_collect/gold_collect1.png" id="2_y82l5"]
+[ext_resource type="Texture2D" uid="uid://8buoxiwhepfe" path="res://sources/sprites/coin/gold_spin/gold_spin_3.png" id="3_eiiq4"]
+[ext_resource type="Texture2D" uid="uid://cfowy2hcniq5q" path="res://sources/sprites/coin/gold_collect/gold_collect2.png" id="3_twje0"]
+[ext_resource type="Texture2D" uid="uid://b8slutfgk13gk" path="res://sources/sprites/coin/gold_collect/gold_collect3.png" id="4_bl456"]
+[ext_resource type="Texture2D" uid="uid://cl484pf5yk4h5" path="res://sources/sprites/coin/gold_spin/gold_spin_4.png" id="4_j0fjx"]
+[ext_resource type="Texture2D" uid="uid://b48406vy343c2" path="res://sources/sprites/coin/gold_collect/gold_collect4.png" id="5_jhk1j"]
+[ext_resource type="Texture2D" uid="uid://bwb4hfu6wn2pu" path="res://sources/sprites/coin/gold_spin/gold_spin_5.png" id="5_ki47o"]
+[ext_resource type="Texture2D" uid="uid://daytah2btc7ui" path="res://sources/sprites/coin/gold_spin/gold_spin_6.png" id="6_0rebt"]
+[ext_resource type="Texture2D" uid="uid://by5ahx3x7nxma" path="res://sources/sprites/coin/gold_collect/gold_collect5.png" id="6_txupx"]
+[ext_resource type="Texture2D" uid="uid://dg2wjsh5i55kn" path="res://sources/sprites/coin/gold_collect/gold_collect6.png" id="7_eg5tw"]
+[ext_resource type="Texture2D" uid="uid://dtr1bmr7k600x" path="res://sources/sprites/coin/gold_spin/gold_spin_7.png" id="7_xlgqc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w81ou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y82l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_twje0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bl456")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jhk1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_txupx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eg5tw")
+}],
+"loop": 1,
+"name": &"collect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vbujj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kqhar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eiiq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j0fjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ki47o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0rebt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xlgqc")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[node name="Coin" type="Node2D" unique_id=1047880868]
+script = ExtResource("1_kqhar")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1225359279]
+sprite_frames = SubResource("SpriteFrames_w81ou")
+animation = &"spin"
