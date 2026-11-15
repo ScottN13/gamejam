@@ -2,41 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-<<<<<<<< Updated upstream:sources/sprites/walking_07.png.import
-uid="uid://bccxrgjb2k6go"
+uid="uid://c3a8fn0gqeirb"
 path="res://.godot/imported/walking_07.png-ffd09742d40936bf4b8d9bf74c93ee5b.ctex"
-========
-uid="uid://bjsbe7dgoe4ja"
-path="res://.godot/imported/jumping_02.png-1c79c545e81b12d8bb2027bcc2ca5ebb.ctex"
->>>>>>>> Stashed changes:sources/sprites/jumping_02.png.import
-=======
-<<<<<<<< Updated upstream:sources/sprites/jump1.png.import
-uid="uid://b0wwa15u7gp4k"
-path="res://.godot/imported/jump1.png-69da1abdcb899276cc035f32ea170520.ctex"
-========
-uid="uid://2omc2jelg6cg"
-path="res://.godot/imported/walking_07.png-ffd09742d40936bf4b8d9bf74c93ee5b.ctex"
->>>>>>>> Stashed changes:sources/sprites/walking_07.png.import
->>>>>>> Stashed changes
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< Updated upstream
 source_file="res://sources/sprites/walking_07.png"
 dest_files=["res://.godot/imported/walking_07.png-ffd09742d40936bf4b8d9bf74c93ee5b.ctex"]
-=======
-<<<<<<<< Updated upstream:sources/sprites/jump1.png.import
-source_file="res://sources/sprites/jump1.png"
-dest_files=["res://.godot/imported/jump1.png-69da1abdcb899276cc035f32ea170520.ctex"]
-========
-source_file="res://sources/sprites/walking_07.png"
-dest_files=["res://.godot/imported/walking_07.png-ffd09742d40936bf4b8d9bf74c93ee5b.ctex"]
->>>>>>>> Stashed changes:sources/sprites/walking_07.png.import
->>>>>>> Stashed changes
 
 [params]
 

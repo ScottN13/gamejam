@@ -2,13 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream:sources/sprites/jump3.png.import
-uid="uid://b51htfrfp3apv"
+uid="uid://c10pnt82nq7md"
 path="res://.godot/imported/jump3.png-0b7953964ac9e27d2e24963f75d121a2.ctex"
-=======
-uid="uid://dh5vy370gcq1v"
-path="res://.godot/imported/jumping_05.png-97896f61d75fc8afc76b456547ab3913.ctex"
->>>>>>> Stashed changes:sources/sprites/jumping_05.png.import
 metadata={
 "vram_texture": false
 }
