@@ -1,30 +1,36 @@
-extends Node
+extends CharacterBody2D
 
-signal jump_pressed
-signal jump_released
-signal down_pressed
-signal down_released
-signal changed_direction(direction:float)
+@export var speed: float = 300.0
+@export var acceleration: float = 2000.0
+@export var friction: float = 2500.0
+@export var jump_velocity: float = -450.0
 
-var direction: float = 0
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity.y += gravity * delta
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var new_direction := Input.get_axis("character_left", "character_right")
-	if new_direction != direction:
-		direction = new_direction
-		changed_direction.emit(new_direction)
-	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("character_jump"):
-		jump_pressed.emit()
-	if event.is_action_released("character_jump"):
-		jump_released.emit()
-	if event.is_action_pressed("character_down"):
-		down_pressed.emit()
-	if event.is_action_released("character_down"):
-		down_released.emit()
+	if Input.is_action_just_pressed("character_jump") and is_on_floor():
+		velocity.y = jump_velocity
+
+	var direction := Input.get_axis("character_left", "character_right")
+	if direction != 0.0:
+		velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0.0, friction * delta)
+
+	move_and_slide()
+	#update_animation(direction)
+
+func update_animation(direction: float) -> void:
+	if direction != 0.0:
+		anim.flip_h = direction < 0.0
+
+	if not is_on_floor():
+		anim.play("jump")
+	elif absf(velocity.x) > 10.0:
+		anim.play("run")
+	else:
+		anim.play("idle")
